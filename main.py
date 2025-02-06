@@ -127,8 +127,8 @@ def end_server():
     
 # Run the application
 if __name__ == '__main__':
-    # client = MongoClient('mongodb+srv://amethyst88:Nigger123@cluster0.43osksu.mongodb.net/')
-    client = MongoClient('mongodb://localhost:27017/')
+    client = MongoClient('mongodb+srv://amethyst88:Nigger123@cluster0.43osksu.mongodb.net/')
+    # client = MongoClient('mongodb://localhost:27017/')
     db = client['pfmaker']
     users = db['users']
     print("connected to mongo")
