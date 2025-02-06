@@ -146,5 +146,5 @@ if __name__ == '__main__':
     "messages": [str],
     "resume": str
 }
-    # run(app, host='localhost', port=8080)
-    app.run(debug=True ,port=8000)
+    run(app, host='0.0.0.0', port=8080)
+    # app.run(debug=True ,port=8000)
