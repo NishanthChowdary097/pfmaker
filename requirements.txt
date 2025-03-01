@@ -3,8 +3,6 @@ jinja2
 pymongo
 pyjwt
 pytz
-os
-gridfs
 yt_dlp
 
 # python3 -m pip install -U pip hatchling wheel
