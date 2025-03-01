@@ -1,0 +1,143 @@
+{
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": [
+            "username",
+            "password",
+            "userId"
+        ],
+        "properties": {
+            "userId":{
+                "bsonType":"string"
+            },
+            "username":{
+                "bsonType": "string"
+            },
+            "password":{
+                "bsonType": "string"
+            },
+            "lor": {
+                "bsonType":"string"
+            },
+            "resume": {
+                "bsonType":"string"
+            },
+            "Projects":{
+                "bsonType": "object",
+                "properties": {
+                    "project_name": {
+                        "bsonType": "string",
+                        "description": "projectname"
+                    },
+                    "url": {
+                        "bsonType": "string",
+                        "description": "link"
+                    }
+                }
+            },
+            "Programming Languages": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of programming languages"
+            },
+            "Frontend Development": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of frontend development technologies"
+            },
+            "Backend Development": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of backend development technologies"
+            },
+            "Mobile App Development": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of mobile app development technologies"
+            },
+            "AI/ML": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of AI/ML technologies"
+            },
+            "Database": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of database technologies"
+            },
+            "Data Visualization": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of data visualization tools"
+            },
+            "Devops": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of DevOps tools"
+            },
+            "Backend as a Service(BaaS)": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of BaaS providers"
+            },
+            "Framework": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of frameworks"
+            },
+            "Testing": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of testing tools"
+            },
+            "Software": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of software"
+            },
+            "Static Site Generators": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of static site generators"
+            },
+            "Game Engines": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of game engines"
+            },
+            "Automation": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of automation tools"
+            },
+            "Other": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array for other technologies or tools"
+            },
+            "social": {
+                "bsonType": "array",
+                "items": { "bsonType": "string" },
+                "description": "An array of social media platforms"
+            },
+            "visitors": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "required": ["visitor", "visit_day"],
+                    "properties": {
+                        "visitor": {
+                            "bsonType": "string",
+                            "description": "Visitor name"
+                        },
+                        "visit_day": {
+                            "bsonType": "string",
+                            "description": "Day of the visit"
+                        }
+                    }
+                },
+                "description": "An array of visitor records with visitor name and visit day"
+            }
+        }
+    }
+}

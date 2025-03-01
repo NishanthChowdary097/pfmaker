@@ -7,49 +7,138 @@
 </head>
 <style>
 
+@font-face {
+  font-family: Inter;
+  src: url('../static/fonts/Inter.woff2');
+}
+
+@font-face {
+  font-family: Obviously;
+  src: url('../static/fonts/Obviously.woff2');
+}
 :root{
-    --dark-primary:#010413;
-    --dark-secondary:#1B1E2B;
+    /* --dark-primary:#010413; */
+    /* --dark-secondary:#1B1E2B; */
+    --dark-primary:#01041337;
+    --dark-secondary:#1b1e2b0c;
     --terirary:#282B37;
     --text:#E1E1E3;
     --x:#323541;
+    --back-img:#200D40;
+    /* --back-img:#0B081D; */
+}
+
+.glowing-cursor {
+    position: absolute;
+    width: 40px; /* Adjust size of cursor */
+    height: 40px; /* Adjust size of cursor */
+    border-radius: 50%;
+    background-color: rgba(211, 211, 241, 0.7); /* Glowing color (you can change it to any color) */
+    box-shadow: 0 0 10px rgba(220, 220, 228, 0.5); /* Glowing effect */
+    pointer-events: none; /* Prevents cursor from interacting with page elements */
+    transition: transform 0.1s ease; /* Optional smooth movement */
+    filter: blur(30px);
 }
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    background-color: var(--dark-primary);
-    overflow: hidden;
+    /* display: flex; */
+    /* background-color: var(--dark-primary); */
+    background-color: var(--back-img);
+    /* overflow: hidden; */
+}
+body{
+    background-image: url('../static/images/herobackground.webp');
+  /* background-size: cover;*/
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 170%;
 }
 
 .sidenav {
-    height: 95vh;
-    position: sticky;
+    position:relative;
     top: 0;
     left: 0;
-    background-color: var(--dark-secondary);
-    padding-top: 20px;
+    background-color: var(--dark-primary);
+    padding: 15px;
     flex:1;
-    margin-top: 3vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-radius: 25px;
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
+    /* justify-content:right; */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center
+    /* border-radius: 25px; */
+}
+.sidenav .logo {
+    flex-grow: 1;
+}
+
+.sidenav a:not(.logo) {
+    margin-left: auto;
+}
+
+::-webkit-scrollbar{
+    width:0;
+}
+#progressbar{
+    position: fixed;
+    border-radius: 6px;
+    top: 0;
+    right: 0;
+    width: 7px;
+    background: linear-gradient(to top,#cac1e7,#43168A);
+}
+#progressbar:before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#cac1e7,#43168A);
+    filter: blur(10px);
+}
+#progressbar:after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#cac1e7,#43168A);
+    filter: blur(30px);
+}
+.logo {
+  color: #5d5d5d;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .sidenav a {
     padding: 15px 20px;
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    /* color: #1A0F41; */
+    color:rgb(191 193 201 / 1);
     display: block;
     transition: 0.3s;
+    font-family: Inter;
+    font-size:medium;
+    font-weight: 100;
+
 }
 
 .sidenav a:hover {
-    background-color: #575757;
+    backdrop-filter: blur(10px);
+    /* box-shadow:  0 0 50px rgba(220, 220, 228, 0.5); */
+    color: white;
+    /* text-shadow: 0 10 #1b1e2b0c; */
+    /* backdrop-filter:blur(24px); */
+    text-shadow: 0 0 20px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px rgb(255, 255, 255);
 }
 
 
@@ -61,70 +150,455 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
 }
-.content section{
-    height: 95vh;
+.content > section{
+    height: 90vh;
     padding: 5px;
     background-color: var(--dark-secondary);
     margin-bottom: 20px;
     border-radius: 16px;
+        /* background-color: red; */
 }
-.content section div{
+.content > section >  div{
     color: var(--text);
     background-color: var(--dark-secondary);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0 4px 30px #cac1e7; */
 /*    margin: 10px;*/
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    /* background-color: red; */
+}
+
+#skills > div{
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+#skills > div > h2{
+    font-family: sans-serif;
+    border-bottom: 3px white;
+    /* background-color: red; */
+    margin-left: 10px;
+}
+#contacts > div{
+    overflow: scroll;
+    width: 99%;
+    height: 100%;
+    /* background-color: red; */
+}
+#contacts > div > h2{
+    font-family: sans-serif;
+    border-bottom: 3px white;
+    /* background-color: red; */
+    margin-left: 10px;
+}
+#contacts >div>h3{
+    font-family: sans-serif;
+    margin-left: 15px;
+}
+#skills > div > h3{
+    font-family: sans-serif;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+#skills > div > div > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
 }
-.blur {
-    filter: blur(5px); /* Apply blur when the class is added */
+.input-grid{
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 20px;
+    padding: 10px;
+}
+.input-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
+.input-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    filter: invert(100%) brightness(100%);
+}
+
+.input-item input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    font-family: Inter;
+    background-color: rgba(124, 145, 231, 0.007);
+    border: 0px solid var(--x);
+    /* border-radius: 5px; */
+    color: var(--text);
+    transition: 0.3s ease-in-out;
+    border-bottom: 2px solid black;
+}
+
+.input-item input:focus {
+    outline: none;
+    /* border-color: #7f00ff; */
+    border-bottom: 3px solid white;
+    
+}
+
+/* Base styles for custom alert box */
+.alert-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.alert {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  max-width: 250px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  animation: slideInBottom 0.5s ease-out forwards;
+  box-shadow:
+    inset -5px -5px 15px rgba(255, 255, 255, 0.3),  5px 5px 15px rgba(0, 0, 0, 0.509);
+}
+
+@keyframes slideInBottom {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}
+
+@keyframes slideOutBottom {
+  0% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: -100px;
+  }
+}
+
+/* Alert Types */
+.alert.error {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.alert.caution {
+  background-color: rgba(255, 165, 0, 0.6);
+}
+
+.alert.success {
+  background-color: rgba(0, 128, 0, 0.6);
+}
+
+.alert.info {
+  background-color: rgba(0, 123, 255, 0.6);
+}
+
+.alert .icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+#progressBarContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+#progressBar {
+  height: 100%;
+  width: 0;
+  background-color: #FF4500;
+  border-radius: 2px;
+  transition: width 0.1s ease-in-out;
+}
+/* Floating Window Styles */
+.floating-window {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.floating-window .header {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.floating-window .header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.floating-window .header .close-btn {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.floating-window .content {
+  padding: 20px;
+  color: var(--text);
+}
+
+.floating-window .content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.floating-window .content li {
+  margin-bottom: 10px;
+}
+
+/* Button to trigger floating window */
+.show-shortcuts-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.show-shortcuts-btn:hover {
+  background-color: #0056b3;
+}
+
+
 </style>
+
 <body>
-    <div class="sidenav">
+    <header class="sidenav">
+        <a href="#" class="logo">Portfolio <b>MAKEROMA</b></a>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#mail">Mail</a>
+        <a href="#skills">Skills</a>
+        <a href="#contacts">Contacts</a>
         <a href="#account">Account</a>
         <a href ="logout" >Logout</a>
+    </header>
+    <!-- side scroll -->
+    <div id="progressbar"></div>
+    <!-- <div class="glowing-cursor"></div> -->
+    <!-- Alert container that will hold all alerts -->
+    <div id="alertContainer" class="alert-container"></div>
+        <!-- A single alert box structure -->
+        <div id="customAlert" class="alert" style="display: none;">
+        <span id="alertMessage"></span> <!-- Message displayed here -->
+        <div id="progressBarContainer">
+            <div id="progressBar"></div> <!-- Progress bar inside the container -->
+        </div>
     </div>
+    <!-- Floating Window -->
+    <div id="floatingWindow" class="floating-window">
+        <div class="header">
+        <span class="close-btn" onclick="closeWindow()">×</span>
+        <h2>Keyboard Shortcuts</h2>
+        </div>
+        <div class="content">
+        <ul>
+            <li><strong>Alt + s</strong>: Save Skills</li>
+            <li><strong>Alt + c</strong>: Save Contacts</li>
+            <li><strong>Alt + a</strong>: Save Account Details</li>
+        </ul>
+        </div>
+    </div>  
     <div class="content" >
         <section id="home">
             <div>Home</div>
         </section>
-        <section id="about">
-            <div>About</div>
+        <section id="skills">
+            <div id="heading">
+                <h2>Skills</h2>
+            </div>
         </section>
-        <section id="mail">
-            <div>Mail</div>
+        <section id="contacts">
+            <div id="heading" >
+                <h2>Contacts:</h2>
+            </div>
         </section>
         <section id="account">
             <div>Account</div>
         </section>
     </div>
+    <!-- <footer>
+        MNC pvt.ltd ©️
+    </footer> -->
 </body>
 <script>
-const navLinks = document.querySelectorAll('.sidenav a');
+    window.onload = function() {
+        if(!sessionStorage.hasOwnProperty('pert')){
+        fetch('/perts').then(response=>response.json()).then(d=>{
+            sessionStorage.setItem('pert',JSON.stringify(d))
+        })}
+        renderPers()
+        renderContacts()
 
-navLinks.forEach(link => {
-    if(!link.href.includes("logout"))
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        // console.log(e)
-        const targetSection = document.querySelector(link.getAttribute('href'));
-        targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+        showAlert("Use the Shift ⬆️ + ? to Know all the shot cuts 😊", 'info', 3000);
+
+        // fetch('/userinfo').then(response => response.json())
+        // .then(data => {
+        //     sessionStorage.setItem("user",JSON.stringify(data.data))
+        // }).catch(error => {
+        //     console.error('Error:', error);
+        // });
+        setPers()
+        setContacts()
+    };
+    
+    const navLinks = document.querySelectorAll('.sidenav a');
+    navLinks.forEach(link => {
+        if(!link.href.includes("logout"))
+            link.addEventListener('click', (e) => {
+            e.preventDefault();
+            // console.log(e)
+            const targetSection = document.querySelector(link.getAttribute('href'));
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                top: targetSection.offsetTop,
+            });
         });
     });
-});
 
+    let progress = document.getElementById('progressbar')
+    let totalHeight = document.body.scrollHeight-window.innerHeight
+    window.onscroll=function(){
+        let progressHeight = (window.pageYOffset/totalHeight)*100;
+        progress.style.height = progressHeight+'%';
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.shiftKey && event.key === '?') {   
+            openWindow()
+        }
+        else if (event.altKey && event.key === 'a'){
+            console.log('Save Account Details');
+        }
+        else if (event.altKey && event.key === 's') {
+            console.log('Save Skills');
+            postUserSkills()
+        }
+        else if (event.altKey && event.key == 'c') {
+            console.log('Save Contacts');
+            postUserContacts();
+        }
+    });
+
+
+    function showAlert(message, type = 'error', duration = 5000) {
+        const alertContainer = document.getElementById('alertContainer');
+        const alertBox = document.createElement('div');
+        const alertMessage = document.createElement('span');
+        const progressBarContainer = document.createElement('div');
+        const progressBar = document.createElement('div');
+        const icon = document.createElement('span');
+
+        alertBox.classList.add('alert');
+        alertMessage.textContent = message;
+        progressBarContainer.id = 'progressBarContainer';
+        progressBar.id = 'progressBar';
+        
+        alertBox.classList.add(type);
+        
+        if (type === 'error') {
+            icon.textContent = '🚫';
+        } else if (type === 'caution') {
+            icon.textContent = '⚠️';
+        } else if (type === 'success') {
+            icon.textContent = '✅';
+        } else if (type === 'info') {
+            icon.textContent = 'ℹ️';
+        }
+
+        alertBox.appendChild(icon);
+        alertBox.appendChild(alertMessage);
+        alertBox.appendChild(progressBarContainer);
+        progressBarContainer.appendChild(progressBar);
+
+        alertContainer.appendChild(alertBox);
+
+        alertBox.style.display = 'block';
+        alertBox.style.animation = 'slideInBottom 0.5s ease-out forwards';
+        
+        let timeLeft = duration;
+        let progressInterval = setInterval(function () {
+            const progress = ((duration - timeLeft) / duration) * 100;
+            progressBar.style.width = progress + '%';
+            
+            timeLeft -= 100;
+            
+            if (timeLeft <= 0) {
+            clearInterval(progressInterval);
+            slideOutAlert(alertBox);
+            }
+        }, 100);
+
+        setTimeout(function () {
+            slideOutAlert(alertBox);
+            clearInterval(progressInterval);
+        }, duration);
+    }
+    function slideOutAlert(alertBox) {
+    alertBox.style.animation = 'slideOutBottom 0.5s ease-in forwards';
+    setTimeout(function () {
+        alertBox.style.display = 'none';
+        alertBox.remove();
+    }, 500);
+    }
+    
+    function openWindow() {
+        document.getElementById("floatingWindow").style.display = "block";
+    }
+    function closeWindow() {
+        document.getElementById("floatingWindow").style.display = "none";
+    }
+
+    // glowing mouse
+    // document.addEventListener("mousemove", function(e) {
+    //     var cursor = document.querySelector('.glowing-cursor');
+    //     cursor.style.left = e.pageX - cursor.offsetWidth / 2 + 'px'; 
+    //     cursor.style.top = e.pageY - cursor.offsetHeight / 2 + 'px';
+    // });
+    
 
 </script>
+<script src="static/js/dashboard.js"></script>
 </html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+<head>
+
+  <meta charset='UTF-8'>
+  <title>{{userData.username}}'s Space</title>
+  <meta name="robots" content="noindex">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link id="INLINE_PEN_STYLESHEET_ID"    rel="stylesheet" href="/static/temp/css/1.css">
+</head>
+  <body  data-spy="scroll" data-target="#nav">
+    <header class="clearfix" id="home">
+        <nav class="navbar navbar-default navbar-fixed-top"  id="nav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav social-list">
+                        <li><a href="https://github.com/akholod" target="_blank"><i class="fa fa-github fa-2x" title="GitHub" aria-hidden="true"></i>
+                        </a></li>
+                        <li><a href="https://codepen.io/akholod/#" target="_blank"><i class="fa fa-codepen fa-2x" title="Code Pen" aria-hidden="true"></i>
+                        </a></li>
+                        <li><a href="https://www.linkedin.com/in/andrey-kokhanevich-800814b5" target="_blank"><i class="fa fa-linkedin fa-2x" title="LinkedIn" aria-hidden="true"></i>
+                        </a></li>
+                        <li><a href="#fb"><i class="fa fa-facebook fa-2x" title="Facebook" aria-hidden="true"></i>
+                        </a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-elem="parallax"><a href="#home">HOME</a></li>
+                        <li data-elem="about"><a href="#about">ABOUT</a></li>
+                        <li data-elem="works"><a href="#works">WORKS</a></li>
+                        <li data-elem="skills"><a href="#skills">SKILLS</a></li>
+                        <li data-elem="contacts"><a href="#contacts">CONTACTS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="banner parallax scroll" id="parallax">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-8 col-sm-12  banner-content">
+                        <h3>full stack web developer</h3>
+                        <h1>
+                            Personal portfolio webpage
+                        </h1>
+                        <h3>Andrew Kokhanevich</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="http://i1378.photobucket.com/albums/ah89/andreykokhanevich/portfolio%20page/scroll_zpsga4ggudw.png" alt="" class="image-responsive center-block scroll-down">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about scroll"  id="about">
+        <div class="container">
+            <div class="row">
+                <div class="text-center about-content">
+                    <h2>Hi there!</h2>
+                    <img src="{{userData.image}}" alt="about me" class="image-responsive img-circle img-thumbnail center-block">
+                    <p class="about-text">My name is {{userData.username}}, I'm a beginner software developer, currently I have some experience with HTML&Bootstrap, CSS&LESS, JS&Jquery, NodeJS&PHP. Now I practice in the development of web applications, and some frameworks like Angular, React etc. I want to learn more and utilize my skills in the field of Information Technology and to help solve real world challenges. I use: Git, Gulp, Bower, Npm, PhpStorm,Photoshop and Google.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="works scroll" id="works">
+        <div class="container">
+            <h2 class="text-center">
+                Portfolio projects
+            </h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="https://codepen.io/akholod/full/GqWwPM/" target="_blank">
+                        <div class="block wow rotateInDownLeft"   data-wow-duration="1s" data-wow-delay="0.15s">
+                            <div class="works-thumb" id="work-1"></div>
+                            <div class="works-caption">FreeCodeCamp Twitch TV App</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="https://akholod.github.io/weather-app/" target="_blank">
+                        <div class="block wow rotateInDownLeft"   data-wow-duration=".8s" data-wow-delay="0.3s">
+                            <div class="works-thumb" id="work-2"></div>
+                            <div class="works-caption">Watch local weather app</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="https://codepen.io/akholod/full/YqopEQ/" target="_blank">
+                        <div class="block wow rotateInDownLeft"   data-wow-duration=".8s" data-wow-delay="0.45s">
+                            <div class="works-thumb" id="work-3"></div>
+                            <div class="works-caption">FreeCodeCamp tribute page</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="https://codepen.io/akholod/full/gMLpMw/" target="_blank">
+                        <div class="block wow rotateInDownRight"   data-wow-duration=".8s" data-wow-delay="0.6s">
+                            <div class="works-thumb" id="work-4"></div>
+                            <div class="works-caption">Wikipedia search app</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="https://codepen.io/akholod/full/ZOWQQj/" target="_blank">
+                    <div class="block wow rotateInDownRight"   data-wow-duration=".8s" data-wow-delay="0.75s">
+                        <div class="works-thumb" id="work-5"></div>
+                        <div class="works-caption">Random quote generator</div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="block wow rotateInDownRight"   data-wow-duration=".8s" data-wow-delay="0.9s">
+                        <div class="works-thumb" id="work-6"></div>
+                        <a href="#">
+                            <div class="works-caption">Photo blog</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills scroll" id="skills">
+        <div class="container">
+            <h2>Skills and proficiency</h2>
+                {% for type,langs in links.items() %}
+                {%if langs|length%}
+                    <h3 style="color: white;">{{type}}</h3>                
+                    <div class="row">
+                    {% for name,link in langs.items() %}
+                        <div class="col-md-2 col-sm-6 col-xs-12">
+                            <div class="skills-thumb wow bounceIn"   data-wow-duration="1.5s" data-wow-delay="0s">
+                                <img src="{{link}}" alt="{{name}} logo" class="img-thumbnail center-block" style="width: 100%;height: 100%;">
+                                <h4 style="color: white;">{{name}}</h4>
+                            </div>
+                        </div>
+                    {%endfor%}
+                    </div>
+                {%endif%}
+                {%endfor%}
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <h2 class="text-center">Get in touch</h2>
+            <div class="row contact">
+                <div class="col-md-6 text-right">
+                    <div class="contacts-data">
+                        <h3>Ready to hire me?</h3>
+                    </div>
+                </div>
+                {% for i in userData.Social %}
+                <div class="contacts-data" style="display: flex;align-items: center;">
+                    <div class="icon-container">
+                        <img src="{{contacts[i]}}" style="width: 40px; height: 40px; padding: 2px; filter: invert(100%);" alt="{{i}}" />
+                    </div>&ensp;&ensp;&ensp;
+                    <a style="text-decoration: none;color: white;" href="{{userData.Social[i]}}"><span class="contact-text ms-2">{{userData.Social[i]}}</span></a>
+                </div>            
+                {%endfor%}
+            </div>
+            <p class="text-center">
+                ALL RIGHTS RESERVED. 2025
+            </p>
+        </div>
+    </footer>
+</body>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script  src="/static/temp/js/1.js" ></script>
+
+</html>
