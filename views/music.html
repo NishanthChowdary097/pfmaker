@@ -689,7 +689,7 @@
         showHover(event);
         });
         audio.onended = () => {
-            playNext();
+            move(1)
         };
         sArea.mouseout(hideHover);
         sArea.on("click", playFromClickedPos);
