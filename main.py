@@ -313,5 +313,5 @@ if __name__ == '__main__':
     
     print("connected to mongo")
     pertData=json.load(open('data.json','r'))
-    run(app, host='0.0.0.0', port=8080)
-    # app.run(debug=True ,port=8080,reloader=True)
+    # run(app, host='0.0.0.0', port=8080)
+    app.run(debug=True,host="0.0.0.0" ,port=8080,reloader=True)
