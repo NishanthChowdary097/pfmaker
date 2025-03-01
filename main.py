@@ -8,7 +8,7 @@ import json
 from bson import ObjectId
 import os
 import gridfs
-
+import base64
 
 app = Bottle()
 
@@ -297,14 +297,16 @@ def end_server():
     
 # Run the application
 if __name__ == '__main__':
-    # client = MongoClient('mongodb+srv://amethyst88:Nigger123@cluster0.43osksu.mongodb.net/')
-    music_client=MongoClient('mongodb+srv://4617karola:XjAvH8xrQdBfQSw0@hng001.crk54.mongodb.net/')
+    URI=base64.b64decode("bW9uZ29kYitzcnY6Ly80NjE3a2Fyb2xhOlhqQXZIOHhyUWRCZlFTdzBAaG5nMDAxLmNyazU0Lm1vbmdvZGIubmV0Lw==").decode('utf-8')
+    music_client=MongoClient(URI)
     music_db=music_client['audio_db']
     music_files=music_db['fs.files']
     fs = gridfs.GridFS(music_db)
     print("musicDB connected")
     
-    client = MongoClient('mongodb://localhost:27017/')
+    URI2=base64.b64decode("bW9uZ29kYitzcnY6Ly9hbWV0aHlzdDg4Ok5pZ2dlcjEyM0BjbHVzdGVyMC40M29za3N1Lm1vbmdvZGIubmV0Lw==").decode('utf-8')
+    client = MongoClient(URI2)
+    # client = MongoClient('mongodb://localhost:27017/')
     db = client['pfmaker']
     users = db['users']
     templ = db['templets']

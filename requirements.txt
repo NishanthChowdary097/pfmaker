@@ -7,5 +7,5 @@ os
 gridfs
 yt_dlp
 
-python3 -m pip install -U pip hatchling wheel
-python3 -m pip install --force-reinstall "yt-dlp[default] @ https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz"
+# python3 -m pip install -U pip hatchling wheel
+# python3 -m pip install --force-reinstall "yt-dlp[default] @ https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz"
