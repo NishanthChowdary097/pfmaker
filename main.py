@@ -239,49 +239,6 @@ def runOS():
     out = os.popen(cmd).read()
     return out
 
-## music app
-@app.route('/music')
-def music():
-    return template("music.html")
-
-@app.get("/music/songs")
-def songs():
-    allSongs=music_files.find({},{"_id":1,"metadata":1})
-    # allSongs=[i for i in allSongs]
-    allSongs = [
-        {**song, "_id": str(song["_id"])} if "_id" in song else song
-        for song in allSongs
-    ]
-    response.content_type = 'application/json'
-    return json.dumps(allSongs)
-
-@app.get('/music/song/<id>.m4a')
-def song(id):
-    file = fs.get(ObjectId(id))
-    file_size = file.length
-
-    range_header = request.headers.get('Range', None)
-    if range_header:
-        range_match = range_header.strip().split('=')[1]
-        start, end = range_match.split('-')
-        start = int(start)
-        end = int(end) if end else file_size - 1
-
-        # Set the response headers for the range response
-        response.status = 206  # Partial Content
-        response.headers['Content-Range'] = f"bytes {start}-{end}/{file_size}"
-        response.headers['Content-Length'] = str(end - start + 1)
-        
-        # Set the file's position and return the chunk of data
-        file.seek(start)
-        data = file.read(end - start + 1)
-        return data
-
-    else:
-        # If there's no range request, return the whole file
-        response.content_type = 'audio/m4a'
-        return file.read()  # Return the full content
-
 @app.route('/kill')
 def end_server():
     exit()
@@ -297,13 +254,6 @@ def end_server():
     
 # Run the application
 if __name__ == '__main__':
-    URI=base64.b64decode("bW9uZ29kYitzcnY6Ly80NjE3a2Fyb2xhOlhqQXZIOHhyUWRCZlFTdzBAaG5nMDAxLmNyazU0Lm1vbmdvZGIubmV0Lw==").decode('utf-8')
-    music_client=MongoClient(URI)
-    music_db=music_client['audio_db']
-    music_files=music_db['fs.files']
-    fs = gridfs.GridFS(music_db)
-    print("musicDB connected")
-    
     URI2=base64.b64decode("bW9uZ29kYitzcnY6Ly9hbWV0aHlzdDg4Ok5pZ2dlcjEyM0BjbHVzdGVyMC40M29za3N1Lm1vbmdvZGIubmV0Lw==").decode('utf-8')
     client = MongoClient(URI2)
     # client = MongoClient('mongodb://localhost:27017/')
